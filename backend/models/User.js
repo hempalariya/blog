@@ -1,4 +1,5 @@
-const User = new mongoose.Schema({
+import mongoose from 'mongoose'
+const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -19,4 +20,4 @@ const User = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-export default mongoose.model('User', User)
+export default mongoose.model('User', userSchema)
