@@ -8,18 +8,33 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    authId:{
+    image: {
+        type: String,
+    },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',   
+        // required: true,
+    },
+    author:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         // required: true,
     },
-
-    
-    // categoryId: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Category',
-    //     required: true,
+    // likes: {
+    //     type: Number,
+    //     default: 0,
     // },
+    // dislikes: {
+    //     type: Number,
+    //     default: 0,
+    // },
+
+    isPublished: {
+        type: Boolean,
+        default: false,
+    },
+    
     
     
 }, { timestamps: true})
